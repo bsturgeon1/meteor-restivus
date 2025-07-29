@@ -1,7 +1,7 @@
 Package.describe({
   name: 'bsturgeon1:restivus',
   summary: 'Create authenticated REST APIs in Meteor via HTTP/HTTPS. Setup CRUD endpoints for Collections.',
-  version: '1.1.5',
+  version: '1.1.8',
   git: 'https://github.com/bsturgeon1/meteor-restivus'
 });
 
@@ -31,14 +31,17 @@ Package.onTest(function (api) {
   // Meteor dependencies
   api.use('webapp@2.0.3');
   api.use('ecmascript');
+  api.use('check');
   api.use('mongo@2.1.0');
   api.use('http@3.0.0');
   api.use('underscore');
   api.use('accounts-base@3.0.0');
   api.use('accounts-password@3.0.3');
+  api.use('meteortesting:mocha', 'server');
   //api.use('practicalmeteor:munit');
+  api.use('simple:json-routes@3.0.0');
   api.use('test-helpers@2.0.2');
-  api.use('alanning:roles');
+  api.use('alanning:roles@4.0.0');
 
   api.addFiles([
       'test/api_tests.js',
